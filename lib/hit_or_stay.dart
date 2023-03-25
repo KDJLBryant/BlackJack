@@ -23,7 +23,6 @@ If he busts after drawing this card, break the loop as well.
 
 void HitOrStay(List<int> playerHand, List<int> houseHand, List<int> deck){
   bool mainLoop = true;
-  int total = 0;
 
   while(mainLoop){
     Status(playerHand, houseHand);
@@ -36,7 +35,8 @@ void HitOrStay(List<int> playerHand, List<int> houseHand, List<int> deck){
         playerHand.add(dealtCard);}break;
       case 2:{mainLoop = false;}break;
     }
-    if(!CheckIfBusted(playerHand)){
+    if(CheckIfBusted(playerHand)){
+      print("You've busted!");
       mainLoop = false;
     }
   }

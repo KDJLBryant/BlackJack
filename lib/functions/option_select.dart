@@ -24,7 +24,7 @@ int OptionSelect(String statement, List<String> options){
 
   while(errorHandle){
     print("\n$statement\n");
-    options.forEach((String i) {print(i);});
+    options.forEach((String i) {print("Option $i");});
     try {
       choice = int.tryParse(stdin.readLineSync());
     } catch(typeError){
