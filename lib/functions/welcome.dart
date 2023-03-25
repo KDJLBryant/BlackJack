@@ -8,6 +8,6 @@ The only rule is that it should be a function
 that has no input and simply prints a text.
 */
 
-void Welcome(){
-  print('welcome again');
+void Welcome() {
+
 }
