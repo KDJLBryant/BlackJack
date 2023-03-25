@@ -10,8 +10,9 @@ int myCard = DealCard(deck);
 print(myCard); // Should print 1
 print(deck); // Should print [2, 3, 4]
 
-<<<<<<< HEAD
+
  */
+
 
 
 int DealCard(List<int> deck){

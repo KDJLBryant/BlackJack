@@ -15,3 +15,5 @@ void main() {
   print("You bet $bet out of $bank.");
   DealCard(deck);
 
+}
+
