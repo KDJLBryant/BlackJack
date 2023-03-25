@@ -24,12 +24,7 @@ void Status(List<int> playerHand, List<int> houseHand) {
     playerHandShow += CardNamer(card) + ' ';
   }
 
-  for (int card in houseHand) {
-    houseHandShow += CardNamer(card) + ' ';
-  }
-
   print("Your hand is: $playerHandShow");
   print("Your score is: $playerScore");
-  print("House hand is: $houseHandShow");
-  print("The score for the house is: $houseScore");
+  print('House\'s card is ${CardNamer(houseHand[0])}.');
 }
