@@ -18,15 +18,24 @@ show the score of the house.
  */
 
 void HousePlays(List<int> houseHand, List<int> deck){
+  bool lastLoop = true;
 
-  while(CalculateScore(houseHand) < 18){
-    print("House hand: ");
-    for(int card in houseHand){
-      print(CardNamer(card));
+  while(lastLoop) {
+    if (CalculateScore(houseHand) < 18) {
+      print("House hand: ");
+      for (int card in houseHand) {
+        print(CardNamer(card));
+      }
+
+      int dealtCard = DealCard(deck);
+      print("Drawn house card ${CardNamer(dealtCard)}");
+      houseHand.add(dealtCard);
+    }else{
+      print("House hand: ");
+      for (int card in houseHand) {
+        print(CardNamer(card));
+      }
+      lastLoop = false;
     }
-
-    int dealtCard = DealCard(deck);
-    print("Drawn house card ${CardNamer(dealtCard)}");
-    houseHand.add(dealtCard);
   }
 }

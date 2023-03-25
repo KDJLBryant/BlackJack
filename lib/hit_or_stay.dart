@@ -36,8 +36,7 @@ void HitOrStay(List<int> playerHand, List<int> houseHand, List<int> deck){
         playerHand.add(dealtCard);}break;
       case 2:{mainLoop = false;}break;
     }
-    if(CheckIfBusted(playerHand)){
-      print("You've Busted!");
+    if(!CheckIfBusted(playerHand)){
       mainLoop = false;
     }
   }
