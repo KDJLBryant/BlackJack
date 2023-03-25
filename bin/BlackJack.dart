@@ -7,7 +7,6 @@ import 'package:BlackJack/lib.dart';
 
 void main() {
   Welcome();
-
   List<int> deck = ShuffledDeck();
   print(deck);
   Shuffler(deck);
