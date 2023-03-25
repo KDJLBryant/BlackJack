@@ -22,6 +22,9 @@ void Status(List<int> playerHand, List<int> houseHand) {
 
   for (int card in playerHand) {
     playerHandShow += CardNamer(card) + ' ';
+  }
+
+  for (int card in houseHand) {
     houseHandShow += CardNamer(card) + ' ';
   }
 
