@@ -1,5 +1,6 @@
 import 'package:BlackJack/functions/functions.dart';
 import 'package:BlackJack/lib.dart';
+import 'dart:io';
 
 /*
   Can you puzzle the methods together to form the game?
@@ -13,16 +14,34 @@ void main() {
   Shuffler(deck);
 
   //CHIP MANAGEMENT
-  //int bank = BuyIn();
-  //int bet = PlaceBet(bank);
-  //print("You bet $bet out of $bank.");
+  int bank = BuyIn();
+  int bet = PlaceBet(bank);
+  print("You bet $bet out of $bank.");
 
   //PLAYER
   List<int> playerHand = [];
   //HOUSE
   List<int> houseHand = [];
 
-  InitialDeal(playerHand, houseHand,deck);
+  bool mainLoop = true;
 
+  while(mainLoop) {
+    InitialDeal(playerHand, houseHand, deck);
+
+    HitOrStay(playerHand, houseHand, deck);
+    HousePlays(houseHand, deck);
+    print(CheckWinner(playerHand, houseHand, bank, bet));
+    ReturnHands(playerHand, houseHand, deck);
+
+    bool errorHandle = true;
+    while(errorHandle) {
+      print("\n1 - Play again\n 2 - Cash out\nEnter corresponding number: ");
+      int replay = int.tryParse(stdin.readLineSync());
+      if (replay == 2) {
+          print("Thanks for playing!\nEnjoy your $bank");
+          mainLoop = false;
+      }
+    }
+  }
 }
 
