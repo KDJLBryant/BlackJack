@@ -16,6 +16,7 @@ hand before showdown.)
  */
 void Status(List<int> playerHand, List<int> houseHand) {
   int playerScore = CalculateScore(playerHand);
+  int houseScore = CalculateScore(houseHand);
   String playerHandShow = "";
   String houseHandShow = "";
 
@@ -24,6 +25,8 @@ void Status(List<int> playerHand, List<int> houseHand) {
     houseHandShow += CardNamer(card) + ' ';
   }
 
-  print("Your hand is: $playerHandShow and your score is: $playerScore");
+  print("Your hand is: $playerHandShow");
+  print("Your score is: $playerScore");
   print("House hand is: $houseHandShow");
+  print("The score for the house is: $houseScore");
 }
