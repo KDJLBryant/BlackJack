@@ -14,4 +14,6 @@ void main() {
   int bet = PlaceBet(bank);
   print("You bet $bet out of $bank.");
   DealCard(deck);
+
 }
+
