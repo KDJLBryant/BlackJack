@@ -9,7 +9,18 @@ Make this function return the List of integers.
  */
 
 List<int> DeckOfCards(){
+  List<int> DeckOfCards = [];
 
+  for(int i=1; i<14; i++){
+    for(int j=0; j<4; j++){
+      DeckOfCards.add(i);
+    }
+  }
+  return DeckOfCards;
+}
+
+void main(){
+  print(DeckOfCards());
 }
 
 
