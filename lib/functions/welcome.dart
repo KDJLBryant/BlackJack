@@ -9,5 +9,8 @@ that has no input and simply prints a text.
 */
 
 void Welcome(){
+  List<String> cards = <String>[];
+  print("Welcome to BlackJack");
+
   print('welcome again');
 }
