@@ -22,5 +22,23 @@ If he busts after drawing this card, break the loop as well.
  */
 
 void HitOrStay(List<int> playerHand, List<int> houseHand, List<int> deck){
+  bool mainLoop = true;
+  int total = 0;
 
+  while(mainLoop){
+    Status(playerHand, houseHand);
+    int choice = OptionSelect("1: Hit or 2: Stay", ["1", "2"]);
+
+    switch(choice){
+      case 1:{
+        int dealtCard = DealCard(deck);
+        print("Drawn card ${CardNamer(dealtCard)}");
+        playerHand.add(dealtCard);}break;
+      case 2:{mainLoop = false;}break;
+    }
+    if(CheckIfBusted(playerHand)){
+      print("You've Busted!");
+      mainLoop = false;
+    }
+  }
 }
