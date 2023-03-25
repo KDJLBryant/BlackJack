@@ -6,8 +6,6 @@ import 'package:BlackJack/lib.dart';
  */
 
 void main() {
+  print('welcome');
   Welcome();
-  int i = 12; // testing
-  String card = CardNamer(i);
-  print(card);
 }
