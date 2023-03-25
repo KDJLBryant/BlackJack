@@ -1,6 +1,7 @@
+import 'dart:io';
+
 import 'package:BlackJack/functions/functions.dart';
 import 'package:BlackJack/lib.dart';
-import 'dart:io';
 
 /*
   Can you puzzle the methods together to form the game?
@@ -38,8 +39,8 @@ void main() {
       print("\n1 - Play again\n 2 - Cash out\nEnter corresponding number: ");
       int replay = int.tryParse(stdin.readLineSync());
       if (replay == 2) {
-          print("Thanks for playing!\nEnjoy your $bank");
-          mainLoop = false;
+        print("Thanks for playing!\nEnjoy your $bank");
+        mainLoop = false;
       }
     }
   }
