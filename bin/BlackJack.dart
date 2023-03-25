@@ -9,4 +9,6 @@ void main() {
   Welcome();
   List<int> deck = ShuffledDeck();
   print(deck);
+  Shuffler(deck);
+  DealCard(deck);
 }
