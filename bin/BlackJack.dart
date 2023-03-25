@@ -11,8 +11,6 @@ void main() {
   Welcome();
   //DECK BUILDING
   List<int> deck = ShuffledDeck();
-  print(deck);
-  Shuffler(deck);
 
   //CHIP MANAGEMENT
   int bank = BuyIn();
@@ -27,7 +25,9 @@ void main() {
   bool mainLoop = true;
 
   while(mainLoop) {
+    Shuffler(deck);
     InitialDeal(playerHand, houseHand, deck);
+
 
     HitOrStay(playerHand, houseHand, deck);
     HousePlays(houseHand, deck);
