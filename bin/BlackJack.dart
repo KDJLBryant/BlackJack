@@ -11,8 +11,16 @@ void main() {
   List<int> deck = ShuffledDeck();
   print(deck);
   Shuffler(deck);
-  int bank = BuyIn();
-  int bet = PlaceBet(bank);
-  print("You bet $bet out of $bank.");
-  DealCard(deck);
+  //int bank = BuyIn();
+  //int bet = PlaceBet(bank);
+  //print("You bet $bet out of $bank.");
+  //DealCard(deck);
+
+  //Player
+  List<int> playerHand = [];
+  //House
+  List<int> houseHand = [];
+
+  InitialDeal(playerHand, houseHand, deck);
+  Status(playerHand, houseHand);
 }

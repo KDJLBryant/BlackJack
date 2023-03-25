@@ -16,8 +16,13 @@ hand before showdown.)
  */
 void Status(List<int> playerHand, List<int> houseHand) {
   int playerScore = CalculateScore(playerHand);
+  String playerHandShow = "";
 
-  String playerHandShow = CardNamer(playerHand[0]);
+  for (int card in playerHand) {
+    playerHandShow += CardNamer(card) + ' ';
+  }
+    //String playerHandShow = CardNamer(playerHand[0]);
+
   String houseHandShow = CardNamer(houseHand[0]); // Only show the first card of the house hand
 
   print("Your hand is: $playerHandShow and your score is: $playerScore");
