@@ -6,13 +6,12 @@ import 'package:BlackJack/lib.dart';
  */
 
 void main() {
-  print('welcome');
   Welcome();
-  List<int> deck = [1, 2, 3, 4, 5, 6];
-  deck.shuffle();
+  List<int> deck = ShuffledDeck();
+  print(deck);
+  Shuffler(deck);
+  int bank = BuyIn();
+  int bet = PlaceBet(bank);
+  print("You bet $bet out of $bank.");
   DealCard(deck);
-  List<int> hand = [];
-  DrawCard(hand, deck);
-  print(hand);
 
-}
