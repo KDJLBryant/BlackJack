@@ -14,5 +14,9 @@ print(deck); // Should print [2, 3, 4]
 
 
 int DealCard(List<int> deck){
-
+  List<int> hand = [];
+  int dealCard = deck.removeLast();
+  hand.add(dealCard);
+  print(hand);
+  print(deck);
 }
