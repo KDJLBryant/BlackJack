@@ -10,7 +10,9 @@ int myCard = DealCard(deck);
 print(myCard); // Should print 1
 print(deck); // Should print [2, 3, 4]
 
+ */
+
 int DealCard(List<int> deck){
   int dealCard = deck.removeLast();
-  return(dealCard);
+  return dealCard;
 }
