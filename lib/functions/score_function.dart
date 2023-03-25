@@ -25,5 +25,20 @@ gets the score 1. So if the method gets the hand [1, 1] the score would be 12
 
 
 int CalculateScore(List<int> hand){
+  int total = 0;
+  bool ScoreCheck = false;
+  for(int card in hand){
+    if(card == 11 || card == 12 || card == 13){
+      card = 10;
+      total += card;
+    }else if(card == 1 && !ScoreCheck){
+      card = 11;
+      total += card;
+      ScoreCheck = true;
+    }else{
+      total += card;
+    }
 
+  }
+  return total;
 }
