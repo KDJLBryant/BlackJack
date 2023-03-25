@@ -19,8 +19,3 @@ List<int> DeckOfCards(){
   return DeckOfCards;
 }
 
-void main(){
-  print(DeckOfCards());
-}
-
-
