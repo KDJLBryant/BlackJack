@@ -23,6 +23,9 @@ void main() {
   List<int> houseHand = [];
 
   InitialDeal(playerHand, houseHand,deck);
+  Status(playerHand,houseHand);
 
+  //HitOrStay();
+  //HousePlays();
 }
 
