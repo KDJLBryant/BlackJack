@@ -11,9 +11,13 @@ void main() {
   Welcome();
   //DECK BUILDING
   List<int> deck = ShuffledDeck();
+  print(deck);
+  Shuffler(deck);
 
   //CHIP MANAGEMENT
   int bank = BuyIn();
+  int bet = PlaceBet(bank);
+  print("You bet $bet out of $bank.");
 
   //PLAYER
   List<int> playerHand = [];
@@ -23,37 +27,25 @@ void main() {
   bool mainLoop = true;
 
   while(mainLoop) {
-    bool errorHandle = true;
-    Shuffler(deck);
-    int bet = PlaceBet(bank);
-    print("You bet $bet out of $bank.");
     InitialDeal(playerHand, houseHand, deck);
 
     HitOrStay(playerHand, houseHand, deck);
-    if(!CheckIfBusted(playerHand)){
-      HousePlays(houseHand, deck);
-    }
-    bank = CheckWinner(playerHand, houseHand, bank, bet);
+    HousePlays(houseHand, deck);
+    CheckWinner(playerHand, houseHand, bank, bet);
     print("Bank: $bank");
     ReturnHands(playerHand, houseHand, deck);
 
-    if(bank < 0){
-      print('your bank roll is below zero');
-      mainLoop = false;
-      errorHandle = false;
-    }
+    bool errorHandle = true;
     while(errorHandle) {
       print("\n1 - Play again\n2 - Cash out\nEnter corresponding number: ");
       int replay = int.tryParse(stdin.readLineSync());
       if (replay == 2) {
         print("Thanks for playing!\nEnjoy your $bank");
         mainLoop = false;
-        errorHandle = false;
       }else{
         errorHandle = false;
       }
     }
   }
-  print("Thanks for playing!\nEnjoy your $bank");
 }
 

@@ -18,18 +18,15 @@ void Status(List<int> playerHand, List<int> houseHand) {
   int playerScore = CalculateScore(playerHand);
   int houseScore = CalculateScore(houseHand);
   String playerHandShow = "";
-  String houseHandShow = "";
 
   for (int card in playerHand) {
     playerHandShow += CardNamer(card) + ' ';
   }
 
-  for (int card in houseHand) {
-    houseHandShow += CardNamer(card) + ' ';
-  }
+  String houseHandShow = CardNamer(houseHand[0]); // Only show the first card of the house hand
 
   print("Your hand is: $playerHandShow");
   print("Your score is: $playerScore");
   print("House hand is: $houseHandShow");
-  print("The score for the house is: $houseScore");
 }
+
