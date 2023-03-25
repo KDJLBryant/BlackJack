@@ -19,5 +19,20 @@ that the function will simply ask the user again to input an answer?
  */
 
 int OptionSelect(String statement, List<String> options){
+  bool errorHandle = true;
+  int choice = 0;
 
+  while(errorHandle){
+    print("\n$statement\n");
+    options.forEach((String i) {print(i);});
+    try {
+      choice = int.tryParse(stdin.readLineSync());
+    } catch(typeError){
+      continue;
+    }
+    print(choice);
+    if(choice == 1 || choice == 2 ){
+      return choice;
+    }
+  }
 }
